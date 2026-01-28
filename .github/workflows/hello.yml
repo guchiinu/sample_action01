@@ -1,0 +1,23 @@
+name: Hello World with Dropdown
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        description: '実行環境を選んでね'
+        required: true
+        default: dev
+        type: choice
+        options:
+          - dev
+          - stg
+          - prod
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: |
+          echo "Hello, GitHub Actions!"
+          echo "選択された環境: ${{ github.event.inputs.env }}"
