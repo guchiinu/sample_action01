@@ -21,3 +21,10 @@ jobs:
         run: |
           echo "Hello, GitHub Actions!"
           echo "選択された環境: ${{ github.event.inputs.env }}"
+  hello2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello Again
+        run: |
+          echo "Hello again, GitHub Actions!"
+          echo "選択された環境: ${{ github.event.inputs.env }}"
